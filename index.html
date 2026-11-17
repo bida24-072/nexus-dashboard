@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Nexus SaaS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="ph ph-hexagon"></i>
+            <span class="logo-text">Nexus</span>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">
+                    <i class="ph ph-squares-four"></i>
+                    <span class="nav-text">Overview</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="analytics.html" class="nav-link">
+                    <i class="ph ph-chart-line-up"></i>
+                    <span class="nav-text">Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="settings.html" class="nav-link">
+                    <i class="ph ph-gear"></i>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <!-- Topbar -->
+        <header class="topbar">
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass" style="color: var(--text-muted);"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            
+            <div class="topbar-actions">
+                <button class="icon-btn" id="theme-toggle">
+                    <i class="ph ph-sun"></i>
+                </button>
+                <button class="icon-btn">
+                    <i class="ph ph-bell"></i>
+                </button>
+                
+                <div class="profile-container">
+                    <button class="profile-btn" id="profile-btn">
+                        <div class="avatar">JD</div>
+                        <span style="display: none;">John Doe</span> <!-- Hide text on mobile -->
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="ph ph-user"></i> My Profile
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ph ph-credit-card"></i> Billing
+                        </a>
+                        <a href="#" class="dropdown-item" style="color: var(--danger);">
+                            <i class="ph ph-sign-out"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="content">
+            <h1 class="page-title">Dashboard Overview</h1>
+            
+            <!-- Metric Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Total Revenue</span>
+                        <i class="ph ph-currency-dollar"></i>
+                    </div>
+                    <div class="metric-value">$45,231.89</div>
+                    <div class="metric-trend trend-up">
+                        <i class="ph ph-trend-up"></i> +20.1% from last month
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Active Users</span>
+                        <i class="ph ph-users"></i>
+                    </div>
+                    <div class="metric-value">2,350</div>
+                    <div class="metric-trend trend-up">
+                        <i class="ph ph-trend-up"></i> +15% from last month
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Sales</span>
+                        <i class="ph ph-shopping-cart"></i>
+                    </div>
+                    <div class="metric-value">12,234</div>
+                    <div class="metric-trend trend-down">
+                        <i class="ph ph-trend-down"></i> -2.5% from last month
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Conversion Rate</span>
+                        <i class="ph ph-activity"></i>
+                    </div>
+                    <div class="metric-value">3.4%</div>
+                    <div class="metric-trend trend-up">
+                        <i class="ph ph-trend-up"></i> +1.2% from last month
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Revenue Over Time</h3>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Traffic Sources</h3>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
